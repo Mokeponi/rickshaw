@@ -3158,6 +3158,9 @@ Rickshaw.Graph.Renderer = Rickshaw.Class.create( {
 		series.forEach( function(series) {
 			if (series.disabled) return;
 			series.path = pathNodes[0][i];
+			if (graph.element.id == 'chart') {
+				series.realPath = pathNodes[0][i];
+			}
 			if (this.stroke) series.stroke = strokeNodes[0][i];
 			this._styleSeries(series);
 			i++;
